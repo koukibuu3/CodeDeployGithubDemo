@@ -16,9 +16,9 @@ jobs:
         aws-region: "ap-northeast-1"
       
     - name: Run AWS CodeDeploy
-      run: aws deploy create-deployment |
-        --application-name "CodeDeployGIthubDemo" |
-        --deployment-group-name "CodeDeployGIthubDemo-DepGrp" |
+      run: aws deploy create-deployment |-
+        --application-name "CodeDeployGIthubDemo" |-
+        --deployment-group-name "CodeDeployGIthubDemo-DepGrp" |-
         --github-location repository="koukibuu3/CodeDeployGIthubDemo",commitId="${{ github.sha }}"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
